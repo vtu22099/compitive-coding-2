@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+private List<Integer> bag;
+public Main() {
+bag = new ArrayList<>();
+}
+public void add(int num) {
+bag.add(num);
+System.out.println(num + " added to bag");
+}
+public boolean remove(int num) {
+if (bag.contains(num)) {
+bag.remove(Integer.valueOf(num));
+System.out.println(num + " removed from bag");
+return true;
+}
+System.out.println(num + " not found in bag");
+return false;
+}
+public int size() {
+return bag.size();
+}
+public boolean isEmpty() {
+return bag.isEmpty();
+}
+public void display() {
+System.out.println("Bag contents: " + bag);
+}
+public static void main(String[] args) {
+Main bag = new Main();
+bag.add(5);
+bag.add(10);
+bag.add(5);
+bag.display();
+bag.remove(10);
+bag.display();
+System.out.println("Bag size: " + bag.size());
+System.out.println("Is bag empty? " + bag.isEmpty());
+}
+}
