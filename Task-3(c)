@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Main {
+public static boolean isValidPassword(String password) {
+boolean hasUpper = false;
+boolean hasLower = false;
+boolean hasDigit = false;
+boolean hasSpecialChar = false;
+if (password.length() < 8) {
+System.out.println("Password must be at least 8 characters long.");
+return false;
+}
+for (char ch : password.toCharArray()) {
+if (Character.isUpperCase(ch)) hasUpper = true;
+else if (Character.isLowerCase(ch)) hasLower = true;
+else if (Character.isDigit(ch)) hasDigit = true;
+else if ("@#$%^&*!()_+=<>?/".contains(String.valueOf(ch)))
+hasSpecialChar = true;
+}
+if (!hasUpper) System.out.println("Password must contain at least one
+uppercase letter.");
+if (!hasLower) System.out.println("Password must contain at least one
+lowercase letter.");
+if (!hasDigit) System.out.println("Password must contain at least one
+digit.");
+if (!hasSpecialChar) System.out.println("Password must contain at least
+one special character (@, #, !, etc.).");
+return hasUpper && hasLower && hasDigit && hasSpecialChar;
+}
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Enter the password to validate:");
+String inputPassword = scanner.nextLine();
+if (isValidPassword(inputPassword)) {
+System.out.println("Pssword is valid!");
+} else {
+System.out.println("Password is invalid.");
+}
+scanner.close();
+}
+}
