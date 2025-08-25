@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Main {
+int[] disks;
+boolean[] placed;
+int n;
+public Main(int n) {
+this.n = n;
+disks = new int[n];
+placed = new boolean[n + 1];
+}
+public void readDisks() {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter disk sizes for each day:");
+for (int i = 0; i < n; i++) {
+disks[i] = sc.nextInt();
+}
+sc.close();
+}
+public void buildTower() {
+int maxDisk = n;
+for (int day = 0; day < n; day++) {
+placed[disks[day]] = true;
+System.out.print("Day " + (day + 1) + ": ");
+while (maxDisk >= 1 && placed[maxDisk]) {
+System.out.print(maxDisk + " ");
+maxDisk--;
+}
+System.out.println();
+}
+}
+public static void main(String[] args) {
+Main dt = new Main(5);
+dt.readDisks();
+dt.buildTower();
+}
+}
