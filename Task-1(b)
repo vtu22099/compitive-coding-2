@@ -1,3 +1,4 @@
+#finding ugly number
 import java.util.*;
 public class Main {
 public static int getNthUglyNumber(int n) {
