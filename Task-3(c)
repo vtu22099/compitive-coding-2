@@ -1,3 +1,4 @@
+#passwod validation
 import java.util.Scanner;
 public class Main {
 public static boolean isValidPassword(String password) {
