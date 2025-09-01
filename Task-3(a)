@@ -1,3 +1,4 @@
+#Finding pattern program
 import java.util.Scanner;
 public class Main {
 public static void printStarPattern(int rows) {
