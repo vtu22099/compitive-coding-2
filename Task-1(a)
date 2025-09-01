@@ -1,3 +1,4 @@
+#square root without math
 import java.util.*;
 public class Main {
 public static int findSqrtofN(int n) {
