@@ -1,3 +1,4 @@
+#Removing an element from sll
 import java.util.*;
 class Node {
 int data;
